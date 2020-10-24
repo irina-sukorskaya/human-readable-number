@@ -1,8 +1,9 @@
 module.exports = function toReadable (number) {
+
   function NumberToLetter(nombre, U=null, D=null) {
     	
     var letter = {
-    0: "zéro",
+    0: "zero",
     1: "un",
     2: "deux",
     3: "trois",
