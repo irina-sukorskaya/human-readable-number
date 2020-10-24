@@ -1,4 +1,4 @@
-module.exports = function toReadable (number) {
+module.exports = (function () {
 
   function NumberToLetter(nombre, U=null, D=null) {
     	
@@ -123,4 +123,4 @@ module.exports = function toReadable (number) {
 
   return NumberToLetter;
 
-}
+})();
