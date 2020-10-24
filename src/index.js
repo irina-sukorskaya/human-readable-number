@@ -6004,8 +6004,6 @@ it('Should return \'nine hundred ninety nine\' when 999 given', () => {
 });
 
 
-export default function toReadable (number) {
-  
-}
+
 
 
