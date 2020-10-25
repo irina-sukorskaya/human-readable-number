@@ -16,21 +16,21 @@ module.exports = (function () {
     10: "ten",
     11: "eleven",
     12: "twelve",
-    13: "treize",
-    14: "quatorze",
-    15: "quinze",
-    16: "seize",
-    17: "dix-sept",
-    18: "dix-huit",
-    19: "dix-neuf",
-    20: "vingt",
-    30: "trente",
-    40: "quarante",
-    50: "cinquante",
-    60: "soixante",
-    70: "soixante-dix",
-    80: "quatre-vingt",
-    90: "quatre-vingt-dix",
+    13: "thirteen",
+    14: "fourteen",
+    15: "fiveteen",
+    16: "sixteen",
+    17: "seventeen",
+    18: "eighteen",
+    19: "nineteen",
+    20: "twenty",
+    30: "thirty",
+    40: "fourty",
+    50: "fifty",
+    60: "sixty",
+    70: "seventy",
+    80: "eighty",
+    90: "ninety",
   };
     
       var i, j, n, quotient, reste, nb;
@@ -68,18 +68,18 @@ module.exports = (function () {
           case 3:
               quotient = Math.floor(nb / 100);
               reste = nb % 100;
-              if (quotient == 1 && reste == 0) numberToLetter = "cent";
-              if (quotient == 1 && reste != 0) numberToLetter = "cent" + " " + NumberToLetter(reste);
-              if (quotient > 1 && reste == 0) numberToLetter = letter[quotient] + " cents";
-              if (quotient > 1 && reste != 0) numberToLetter = letter[quotient] + " cent " + NumberToLetter(reste);
+              if (quotient == 1 && reste == 0) numberToLetter = "hundred";
+              if (quotient == 1 && reste != 0) numberToLetter = "hundred" + " " + NumberToLetter(reste);
+              if (quotient > 1 && reste == 0) numberToLetter = letter[quotient] + " hundreds";
+              if (quotient > 1 && reste != 0) numberToLetter = letter[quotient] + " hundred " + NumberToLetter(reste);
               break;
           case 4 :
           case 5 :
           case 6 :
               quotient = Math.floor(nb / 1000);
               reste = nb - quotient * 1000;
-              if (quotient == 1 && reste == 0) numberToLetter = "mille";
-              if (quotient == 1 && reste != 0) numberToLetter = "mille" + " " + NumberToLetter(reste);
+              if (quotient == 1 && reste == 0) numberToLetter = "thousand";
+              if (quotient == 1 && reste != 0) numberToLetter = "thousand" + " " + NumberToLetter(reste);
               if (quotient > 1 && reste == 0) numberToLetter = NumberToLetter(quotient) + " mille";
               if (quotient > 1 && reste != 0) numberToLetter = NumberToLetter(quotient) + " mille " + NumberToLetter(reste);
               break;
@@ -88,8 +88,8 @@ module.exports = (function () {
           case 9:
               quotient = Math.floor(nb / 1000000);
               reste = nb % 1000000;
-              if (quotient == 1 && reste == 0) numberToLetter = "un million";
-              if (quotient == 1 && reste != 0) numberToLetter = "un million" + " " + NumberToLetter(reste);
+              if (quotient == 1 && reste == 0) numberToLetter = "million";
+              if (quotient == 1 && reste != 0) numberToLetter = "million" + " " + NumberToLetter(reste);
               if (quotient > 1 && reste == 0) numberToLetter = NumberToLetter(quotient) + " millions";
               if (quotient > 1 && reste != 0) numberToLetter = NumberToLetter(quotient) + " millions " + NumberToLetter(reste);
               break;
@@ -98,8 +98,8 @@ module.exports = (function () {
           case 12:
               quotient = Math.floor(nb / 1000000000);
               reste = nb - quotient * 1000000000;
-              if (quotient == 1 && reste == 0) numberToLetter = "un milliard";
-              if (quotient == 1 && reste != 0) numberToLetter = "un milliard" + " " + NumberToLetter(reste);
+              if (quotient == 1 && reste == 0) numberToLetter = "milliard";
+              if (quotient == 1 && reste != 0) numberToLetter = "milliard" + " " + NumberToLetter(reste);
               if (quotient > 1 && reste == 0) numberToLetter = NumberToLetter(quotient) + " milliards";
               if (quotient > 1 && reste != 0) numberToLetter = NumberToLetter(quotient) + " milliards " + NumberToLetter(reste);
               break;
@@ -108,18 +108,14 @@ module.exports = (function () {
           case 15:
               quotient = Math.floor(nb / 1000000000000);
               reste = nb - quotient * 1000000000000;
-              if (quotient == 1 && reste == 0) numberToLetter = "un billion";
-              if (quotient == 1 && reste != 0) numberToLetter = "un billion" + " " + NumberToLetter(reste);
+              if (quotient == 1 && reste == 0) numberToLetter = "billion";
+              if (quotient == 1 && reste != 0) numberToLetter = "billion" + " " + NumberToLetter(reste);
               if (quotient > 1 && reste == 0) numberToLetter = NumberToLetter(quotient) + " billions";
               if (quotient > 1 && reste != 0) numberToLetter = NumberToLetter(quotient) + " billions " + NumberToLetter(reste);
               break;
       }//fin switch
-      /*respect de l'accord de quatre-vingt*/
-      if (numberToLetter.substr(numberToLetter.length - "quatre-vingt".length, "quatre-vingt".length) == "quatre-vingt") numberToLetter = numberToLetter + "s";
 
-      return numberToLetter;
-
-  }//-----------------------------------------------------------------------
+  }
 
   return NumberToLetter;
 
