@@ -23,7 +23,7 @@ module.exports = function toReadable (input) {
   str += n2 != 0 ? (getLT20(n2) || get20Plus(n2)) + 'lakh ' : ''
   str += n3 != 0 ? (getLT20(n3) || get20Plus(n3)) + 'thousand ' : ''
   str += n4 != 0 ? getLT20(n4) + 'hundred ' : ''
-  str += n5 != 0 && str != '' ? 'and ' : ''
+  str += n5 != 0 && str != '' ? ' ' : ''
   str += n5 != 0 ? (getLT20(n5) || get20Plus(n5)) : ''
 
   return str.trim()
